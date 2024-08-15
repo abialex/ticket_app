@@ -1,0 +1,64 @@
+{
+
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "execute build runner",
+        "command": "dart run build_runner build --delete-conflicting-outputs",
+        "request": "launch",
+        "type": "node-terminal",
+      },
+      {
+        "name": "Launch development",
+        "request": "launch",
+        "type": "dart",
+        "program": "lib/main_development.dart",
+        "args": ["--flavor", "development", "--target", "lib/main_development.dart"]
+      },
+      {
+        "name": "Launch staging",
+        "request": "launch",
+        "type": "dart",
+        "program": "lib/main_staging.dart",
+        "args": ["--flavor", "staging", "--target", "lib/main_staging.dart"]
+      },
+      {
+        "name": "Launch production",
+        "request": "launch",
+        "type": "dart",
+        "program": "lib/main_production.dart",
+        "args": ["--flavor", "production", "--target", "lib/main_production.dart"]
+      },
+      {
+        "name": "Generate apk development",
+        "command": "flutter build apk --release --flavor development lib/main_development.dart",
+        "request": "launch",
+        "type": "node-terminal"
+      },
+      {
+        "name": "Generate apk staging",
+        "command": "flutter build apk --release --flavor staging lib/main_staging.dart",
+        "request": "launch",
+        "type": "node-terminal"
+      },
+      {
+        "name": "Generate apk production",
+        "command": "flutter build apk --release --flavor production lib/main_production.dart",
+        "request": "launch",
+        "type": "node-terminal"
+      },
+      {
+        "name": "Generate windows install development",
+        "command": "flutter build windows --release -t lib/main_development.dart",
+        "request": "launch",
+        "type": "node-terminal"
+      },
+      {
+        "name": "Generate icons App",
+        "command": "flutter pub run flutter_launcher_icons:main -f flutter_launcher_icons*",
+        "request": "launch",
+        "type": "node-terminal"
+      }
+    ]
+  }
+  
